@@ -1,0 +1,31 @@
+{% extends "JPApp/padre.html" %}
+
+{% load static %}
+
+{% block page_title %} 
+Iniciar Sesión JPApp
+{% endblock %}
+
+{% block nav_bar %} 
+<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+    <li class="nav-item"><a class="nav-link" href="{% url 'RegistroUsuario' %}">Registrarse</a></li>
+</ul>
+{% endblock %}
+
+{% block header%}
+<header class="masthead">
+        <div class="container">
+            <center>
+            <div class="masthead-subheading">Inicia sesión</div>
+            <form action="" method="POST"> {% csrf_token %}
+                <center>
+                    <table>{{form1.as_table}}</table>
+                </center><br>
+                
+                <button type="submit" style="color: rgb(255, 221, 0); text-shadow: 1px 1px 1px black;">Iniciar Sesión</button>
+            </form>
+            </center>
+        </div>
+
+</header>
+{% endblock %}

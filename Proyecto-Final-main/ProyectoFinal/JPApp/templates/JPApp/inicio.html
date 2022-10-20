@@ -1,0 +1,185 @@
+{% extends "JPApp/padre.html" %}
+
+{% load static %}
+
+{% block page_title %} 
+Inicio JPApp
+{% endblock %}
+
+{% block nav_bar %} 
+<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+    <li class="nav-item"><a class="nav-link" href="#portfolio">Secciones</a></li>
+    <li class="nav-item"><a class="nav-link" href="#Tutorial">Tutorial</a></li>
+    <li class="nav-item"><a class="nav-link" href="#About">Conocenos</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'Login' %}">Iniciar Sesión</a></li>
+</ul>
+{% endblock %}
+
+{% block header %} 
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">¡Bienvenidos!</div>
+        <div class="masthead-heading text-uppercase">Registramos y creamos soluciones</div>
+        <br><div class="subheading">{{mensaje}}</div>
+    </div>
+</header>
+{% endblock %}
+
+{% block secciones %} 
+<section class="page-section bg-light" id="portfolio">
+<div class="container">
+    <div class="text-center">
+        <h2 class="section-heading text-uppercase">Secciones</h2>
+        <h3 class="section-subheading text-muted">Suma más recursos para ayudarnos entre todos</h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 mb-4">
+            <!-- Portfolio item 1-->
+            <div class="portfolio-item">
+                <a href="{% url 'ListaInvestigacion' %}">
+                    <img class="img-fluid" src="{% static 'JPApp/assets/img/portfolio/12.jpg' %}" alt="..." />
+                <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">Investigaciones</div>
+                </a>
+                    <div class="portfolio-caption-subheading text-muted">Ingresa para ver o modificar el listado de investigaciones</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+            <!-- Portfolio item 2-->
+            <div class="portfolio-item">
+                <a href="{% url 'ListaErrores' %}">
+                    <img class="img-fluid" src="{% static 'JPApp/assets/img/portfolio/21.jpg' %}" alt="..." />
+                <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">Errores comunes</div>
+                </a>
+                    <div class="portfolio-caption-subheading text-muted">Ingresa para ver o modificar el listado de errores</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+            <!-- Portfolio item 3-->
+            <div class="portfolio-item">
+                <a href="{% url 'ListaRefuerzos' %}">
+                    <img class="img-fluid" src="{% static 'JPApp/assets/img/portfolio/31.jpg' %}" alt="..." />
+                <div class="portfolio-caption">
+                    <div class="portfolio-caption-heading">Refuerzos</div>
+                </a>
+                    <div class="portfolio-caption-subheading text-muted">Ingresa para ver o modificar el listado de refuerzos</div>
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+{% endblock %}
+
+{% block tutorial %} 
+<section class="page-section" id="Tutorial">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Tutorial</h2>
+            <h3 class="section-subheading text-muted"><!-- Texto --></h3>
+        </div>
+        <ul class="timeline">
+            <li>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'JPApp/assets/img/about/11.jpg' %}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4><!-- Texto --></h4>
+                        <h4 class="subheading">Registrate o inicia sesión</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted"><!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!--></p></div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'JPApp/assets/img/about/21.jpg' %}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4><!-- Texto --></h4>
+                        <h4 class="subheading">Elige una sección</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted"><!-- Texto --></p></div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'JPApp/assets/img/about/31.jpg' %}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4><!-- Texto --></h4>
+                        <h4 class="subheading">Completa los datos</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted"><!-- Texto --></p></div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'JPApp/assets/img/about/41.jpg' %}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4><!-- Texto --></h4>
+                        <h4 class="subheading">Sube alguna imágen o vídeo</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted"><!-- Texto --></p></div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'JPApp/assets/img/about/51.jpg' %}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4><!-- Texto --></h4>
+                        <h4 class="subheading">Puedes buscar por palabras claves <br> y también modificar el contenido</h4>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted"><!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!--></p></div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image">
+                    <h4>
+                        ¡Así
+                        <br />
+                        de
+                        <br />
+                        fácil!
+                    </h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
+
+{% block about %} 
+<section class="page-section bg-light" id="About">
+    <div class="row justify-content-center">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Acerca de nosotros</h2>
+            <h3 class="section-subheading text-muted">Creadores de la web JPApp</h3>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{% static 'JPApp/assets/img/team/12.jpg' %}" alt="..." />
+                    <h4>José Puentes</h4>
+                    <p class="text-muted">Analista E-Commerce</p>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/josepuentes/" aria-label="Parveen Anand LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{% static 'JPApp/assets/img/team/21.jpg' %}" alt="..." />
+                    <h4>Jocelyne Paradas</h4>
+                    <p class="text-muted">Analista E-Commerce</p>
+                    <a class="btn btn-dark btn-social mx-2" href="https://www.linkedin.com/in/jocelyneparadas/" aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto justify-content-center"><p class="large text-muted">Somos dos análistas de E-commerce, con experiencia en el área de catálogo de productos. Nos apasiona el análisis de datos y el desarrollo con python.</p></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends "JPApp/padre.html" %}
+
+{% load static %}
+
+{% block page_title %} 
+Registro y listado de errores
+{% endblock %}
+
+{% block nav_bar %} 
+<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaErrores' %}">Errores</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaRefuerzos' %}">Refuerzos</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaInvestigacion' %}">Investigaciones</a></li>
+</ul>
+{% endblock %}
+
+{% block header %} 
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Registro y listado de errores</div>
+    </div>
+</header>
+{% endblock %}
+
+{% block about %} 
+    
+    {% for bugs in object_list %}
+    <table border = "3">
+        <tbody>
+            <tr>
+                <th>Dominio: {{bugs.bugs_domain}}</th>
+                <td>Colaborador: {{bugs.bugs_owner}}</td>
+                <td>Nombre o código de error: {{bugs.bugs_name}}</td>
+                <td>Fecha: {{bugs.bugs_date}}</td>
+                <td>Descripción del error: {{bugs.bugs_description}}</td>
+                <td>¿Es bloqueante?: {{bugs.bugs_blocking}}</td>
+                <td>Video: {{bugs.bugs_media}}</td>
+                <td>Imagen: {{bugs.bugs_image}}</td>
+                <br>
+            </tr>
+        </tbody>
+    </table>
+    {% endfor %}
+    
+{% endblock %}
