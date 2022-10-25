@@ -1,0 +1,48 @@
+{% extends "JPApp/padre.html" %}
+
+{% load static %}
+
+{% block page_title %} 
+Registro y listado de errores
+{% endblock %}
+
+{% block nav_bar %} 
+<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaErrores' %}">Errores</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaRefuerzos' %}">Refuerzos</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaInvestigacion' %}">Investigaciones</a></li>
+</ul>
+{% endblock %}
+
+{% block header %} 
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Registro y listado de errores</div>
+    </div>
+</header>
+{% endblock %}
+
+{% block about %} 
+    
+    {% for bugs in bugs %}
+    <table border = "3">
+        <tbody>
+            <tr>
+                <th>Dominio: {{bugs.bugs_domain}}</th>
+                <td>Colaborador: {{bugs.bugs_owner}}</td>
+                <td>Nombre o código de error: {{bugs.bugs_name}}</td>
+                <td>Fecha: {{bugs.bugs_date}}</td>
+                <td>Descripción del error: {{bugs.bugs_description}}</td>
+                <td>¿Es bloqueante?: {{bugs.bugs_blocking}}</td>
+                <br>
+            </tr>
+        </tbody>
+    </table>
+    <p>Imagen: <img src='/media/{{bugs.bugs_image}}' alt = "No se registró imagen"></p>
+    <p>Video: <video width="640" height="480" controls>
+        <source src="/media/{{bugs.bugs_media}}" type="video/mp4">
+        <source src="/media/{{bugs.bugs_media}}" type="video/ogg">
+        <source src="/media/{{bugs.bugs_media}}" type="video/WebM">
+      </video></p>
+    {% endfor %}
+{% endblock %}

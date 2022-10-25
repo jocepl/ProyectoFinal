@@ -1,0 +1,42 @@
+{% extends "JPApp/padre.html" %}
+
+{% load static %}
+
+{% block page_title %} 
+Registro y listado de refuerzos
+{% endblock %}
+
+{% block nav_bar %} 
+<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaErrores' %}">Errores</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaRefuerzos' %}">Refuerzos</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaInvestigacion' %}">Investigaciones</a></li>
+</ul>
+{% endblock %}
+
+{% block header %} 
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Registro y listado de refuerzos</div>
+    </div>
+</header>
+{% endblock %}
+
+{% block about %} 
+    {% for tips in object_list %}
+    <table border = "3">
+        <tbody>
+            <tr>
+                <th>Nombre: {{tips.tips_name}}</th>
+                <td>Descripción del refuerzo: {{tips.tips_description}}</td>
+                <td>Colaborador: {{tips.tips_owner}}</td>
+                <td>Fecha: {{tips.tips_date}}</td>
+                <td>Email: {{tips.tips_email}}</td>
+                <td><a href="/media/{{tips.tips_media}}">Presentación</a></td>
+                <td><a href="{{tips.tips_link}}">Enlace</a></td>
+                <br>
+            </tr>
+        </tbody>
+    </table>
+    {% endfor %}
+{% endblock %}

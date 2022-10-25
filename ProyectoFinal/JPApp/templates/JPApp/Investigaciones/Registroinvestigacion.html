@@ -1,0 +1,43 @@
+{% extends "JPApp/padre.html" %}
+
+{% load static %}
+
+{% block page_title %} 
+Registro de investigaciones
+{% endblock %}
+
+{% block nav_bar %} 
+<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaErrores' %}">Errores</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaRefuerzos' %}">Refuerzos</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaInvestigacion' %}">Investigaciones</a></li>
+</ul>
+{% endblock %}
+
+{% block header %} 
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Registro de Investigaciones</div>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block Service%}
+    <br>
+<center><h2> Registro de investigaciones </h2></center>
+    <br>
+    <center>
+    <form action="" method="POST" enctype ="multipart/form-data"> {% csrf_token%}
+
+        <table>{{form.as_table}}</table>
+
+        <input type="submit" value="Confirmar">
+
+    </form>
+    </center>
+
+{% endblock %}
+
+{% block secciones %} 
+{% endblock %}

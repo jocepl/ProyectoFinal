@@ -1,0 +1,42 @@
+{% extends "JPApp/padre.html" %}
+
+{% load static %}
+
+{% block page_title %} 
+Registro y listado de investigaciones
+{% endblock %}
+
+{% block nav_bar %} 
+<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaErrores' %}">Errores</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaRefuerzos' %}">Refuerzos</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'ListaInvestigacion' %}">Investigaciones</a></li>
+</ul>
+{% endblock %}
+
+{% block header %} 
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-heading text-uppercase">Registro y listado de investigaciones</div>
+    </div>
+</header>
+{% endblock %}
+
+{% block about %} 
+    {% for investigations in object_list %}
+    <table border = "3">
+        <tbody>
+            <tr>
+                <th>Dominio: {{investigations.domain_name}}</th>
+                <td>Creador/es: {{investigations.investigation_owner}}</td>
+                <td>Nombre: {{investigations.investigation_name}}</td>
+                <td>Fecha: {{investigations.investigation_date}}</td>
+                <td>Resumen: {{investigations.investigation_overview}}</td>
+                <td><a href="/media/{{investigations.investigation_media}}">Archivo</a></td>
+                <td><a href="{{investigations.investigation_link}}">Enlace</a></td>
+                <br>
+            </tr>
+        </tbody>
+    </table>
+    {% endfor %}
+{% endblock %}
